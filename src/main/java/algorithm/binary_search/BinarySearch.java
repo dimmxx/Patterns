@@ -2,33 +2,36 @@ package main.java.algorithm.binary_search;
 
 public class BinarySearch {
 
-    int[] array = {1, 2, 3, 4, 5, 6};
-                // 0, 1, 2, 3, 4, 5
-    int item = 2;
+    public static void main(String[] args) {
 
+        int[] array = {15, 29, 3054, 4547, 5000, 6777, 7145};
+        // 0, 1, 2, 3, 4, 5
+        int item = 0;
 
-    public int binarySearch(int[] orderedArray, int item) {
+        BinarySearch binarySearch = new BinarySearch();
+        System.out.println(binarySearch.binarySearch(array, item));
+    }
+
+    public int binarySearch(int[] array, int item) {
 
         int low = 0;
-        int high = orderedArray.length - 1;
-
-        while (low < high){
-
-            int mid = (low + high)/2;
-
-            if(mid == item){
-                return  mid;
+        int high = array.length - 1;
+        while (low < high) {
+            if (array[high] == item) {
+                return high;
+            } else if (array[low] == item) {
+                return low;
+            }
+            int mid = (low + high) / 2;
+            if (item == array[mid]) {
+                return mid;
+            } else if (item < array[mid]) {
+                high = mid;
+            } else if (item > array[mid]) {
+                low = mid;
             }
         }
-
-
-
-
-
-
-
-
-        return 0;
+        return -1;
     }
 
 

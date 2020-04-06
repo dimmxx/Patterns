@@ -8,7 +8,9 @@ public class App {
         int item = 2;
 
         BinarySearch binarySearch = new BinarySearch();
-        System.out.println(binarySearch.binarySearch(array, item));
+        //System.out.println(binarySearch.binarySearch(array, item));
+
+        System.out.println(99/2);
 
     }
 
